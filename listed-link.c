@@ -27,39 +27,48 @@ int plist(struct can* c)
 }
 int addlist(struct can*c){
   struct can* head = NULL;
+  int num1,num2;
   printf("No Adding\n");
   plist(head);
   c = malloc(sizeof(struct can));
   c->address = 100;
   c->next = head;
   head = c;
-
   printf("First Adding\n");
+  plist(head);
+  c = malloc(sizeof(struct can));
+  printf("Enter the number you want to add\n");
+  scanf("%d",&num2);
+  while(head->next != NULL) {
+         head = head->next->next;
+     }
+     head->next = (struct can*) malloc(sizeof(struct can*));
+     head->next->address =num2;
+     head->next->next = NULL;
+
+  printf("Second Adding\n");
   plist(head);
   c = malloc(sizeof(struct can));
 	c->address = 200;
 	c->next = head;
 	head = c;
-	printf("Second Adding\n");
+	printf("Third Adding\n");
 	plist(head);
   c = malloc(sizeof(struct can));
-  int num1,num2;
+
   printf("Enter the number you want to add\n");
   scanf("%d",&num1);
   c->address = num1;
   c->next = head;
   head = c;
-  printf("Third Adding\n");
+  printf("Fourth Adding\n");
   plist(head);
   c = malloc(sizeof(struct can));
 
-
-
-  printf("Fourth Adding\n");
-  plist(head);
   return 0;
 }
 int deletelist(struct can*c){
+  printf("Delete List\n");
   struct can* head = NULL;
   if(head != NULL)
   {
