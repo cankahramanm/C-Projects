@@ -7,14 +7,12 @@ Mehmet Can KAHRAMAN
 https://github.com/cankahramanm/C-Projects
 */
 
- struct can
-{
+ struct can{
 	int address;
 	struct can* next;
 };
 
-int plist(struct can* c)
-{
+int plist(struct can* c){
 	printf("Head==>");
 	while(c != NULL)
 	{
@@ -23,6 +21,23 @@ int plist(struct can* c)
   }
 
 	printf("NULL\n\n");
+  return 0;
+}
+int searchlist(struct can* c){
+int search;
+int count=0;
+printf("Enter the number you want to search\n");
+scanf("%d",&search);
+while(c != NULL)
+{
+  count++;
+
+  if(c->address==search){
+    break;
+  }
+  c = c->next;
+}
+printf("Position of the number you are searching=%d.\n",count);
   return 0;
 }
 int addlist(struct can*c){
@@ -42,7 +57,7 @@ int addlist(struct can*c){
   while(head->next != NULL) {
          head = head->next->next;
      }
-     head->next = (struct can*) malloc(sizeof(struct can*));
+     head->next= (struct can*) malloc(sizeof(struct can*));
      head->next->address =num2;
      head->next->next = NULL;
 
@@ -63,7 +78,7 @@ int addlist(struct can*c){
   head = c;
   printf("Fourth Adding\n");
   plist(head);
-  c = malloc(sizeof(struct can));
+  searchlist(head);
 
   return 0;
 }
