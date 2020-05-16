@@ -167,7 +167,7 @@ if(moves>3){
     hamle sayısı 8 olursa 4 er hamle yaptıklarından
     eşit bir müsabaka oluyor.
     */
-   printf("Game is a draw\nGood luck next time\n")
+   printf("Game is a draw\nGood luck next time\n");
    break;
            }
 }
