@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<time.h>
 /*
 Mehmet Can KAHRAMAN
 200008645
@@ -39,7 +40,7 @@ return root[3][3];
 }
 int main()
 {
-  int i,j,moves,line,column;
+  int i,j,moves;
   srand(time(NULL));//PC nin hep aynı hamleleri yapmaması için kullandım.Zamana bağlı olarak hamleler değişecektir.
 char root[3][3]={{'-','-','-'},
                  {'-','-','-'},
